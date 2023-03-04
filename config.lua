@@ -16,12 +16,18 @@ vim.opt.cursorline = true -- highlight the current line
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+vim.opt.foldlevel = 20
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldopen = "block"
 
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 
-lvim.colorscheme = "tokyonight-storm"
+lvim.colorscheme = "one"
+-- vim.opt.background = "dark"
+vim.opt.background = "light"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -31,6 +37,10 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<S-s>"] = ":w<CR>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+
+
+-- lvim.keys.normal_mode["<C-j>"] = ":10j<CR>"
+-- lvim.keys.normal_mode["<C-k>"] = ":10k<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -204,7 +214,72 @@ linters.setup {
 lvim.plugins = {
     "joshdick/onedark.vim",
     "nvim-lua/plenary.nvim",
-    "akinsho/flutter-tools.nvim"
+    "akinsho/flutter-tools.nvim",
+    "rakr/vim-one",
+    {
+        "iamcco/markdown-preview.nvim",
+        build = "cd app && npm install",
+        ft = "markdown",
+        config = function()
+            vim.g.mkdp_auto_start = 1
+        end,
+    },
+    {
+        "echasnovski/mini.map",
+        branch = "stable",
+        config = function()
+            require('mini.map').setup()
+            local map = require('mini.map')
+            map.setup({
+                integrations = {
+                    map.gen_integration.builtin_search(),
+                    map.gen_integration.diagnostic({
+                        error = 'DiagnosticFloatingError',
+                        warn  = 'DiagnosticFloatingWarn',
+                        info  = 'DiagnosticFloatingInfo',
+                        hint  = 'DiagnosticFloatingHint',
+                    }),
+                },
+                symbols = {
+                    encode = map.gen_encode_symbols.dot('4x2'),
+                },
+                window = {
+                    side = 'right',
+                    width = 20, -- set to 1 for a pure scrollbar :)
+                    winblend = 15,
+                    show_integration_count = false,
+                },
+            })
+        end
+    },
+}
+
+lvim.autocommands = {
+    {
+        { "BufEnter", "Filetype" },
+        {
+            desc = "Open mini.map and exclude some filetypes",
+            pattern = { "*" },
+            callback = function()
+                local exclude_ft = {
+                    "qf",
+                    "NvimTree",
+                    "toggleterm",
+                    "TelescopePrompt",
+                    "alpha",
+                    "netrw",
+                }
+
+                local map = require('mini.map')
+                if vim.tbl_contains(exclude_ft, vim.o.filetype) then
+                    vim.b.minimap_disable = true
+                    map.close()
+                elseif vim.o.buftype == "" then
+                    map.open()
+                end
+            end,
+        },
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
