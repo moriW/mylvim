@@ -15,6 +15,7 @@ return {
       background_colour = "#FFF",
     },
   },
+  { "f-person/git-blame.nvim" },
   {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",

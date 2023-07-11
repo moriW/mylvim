@@ -30,3 +30,5 @@ local lazyterm = function()
 end
 map("n", "<C-`>", lazyterm, { desc = "ToggleTerm" })
 map("t", "<C-`>", lazyterm, { desc = "ToggleTerm" })
+
+map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>", { desc = "ToggleBlame" })

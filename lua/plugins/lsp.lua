@@ -13,7 +13,7 @@ return {
           -- lua
           nls.builtins.formatting.stylua,
           -- python
-          nls.builtins.diagnostics.flake8,
+          -- nls.builtins.diagnostics.flake8,
           nls.builtins.formatting.black,
           -- vue
           nls.builtins.formatting.prettier,
