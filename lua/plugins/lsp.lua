@@ -39,6 +39,7 @@ return {
         ruff_lsp = {},
         tsserver = {},
       },
+      autoformat = false,
     },
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()

@@ -21,8 +21,10 @@ end
 
 map("n", "<leader>bs", "<cmd>w<cr>", { desc = "Save buffer" })
 map("n", "<leader>bc", "<cmd>bp|bd #<cr>", { desc = "Close buffer" })
+map("n", "<leader>bC", "<cmd>bufdo bd<cr>", { desc = "Close Other buffer" })
 map("n", "q", "<cmd>q<cr>", { desc = "Quit Buffer/Window" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "LiveGrep" })
+map("n", "<leader>M", "<cmd>MinimapToggle<cr>", { desc = "MinimapToggle" })
 map("v", "p", '"_dP')
 
 local lazyterm = function()
