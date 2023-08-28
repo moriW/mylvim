@@ -30,7 +30,7 @@ map("v", "p", '"_dP')
 local lazyterm = function()
   Util.float_term(nil, { cwd = Util.get_root() })
 end
-map("n", "<C-`>", lazyterm, { desc = "ToggleTerm" })
-map("t", "<C-`>", lazyterm, { desc = "ToggleTerm" })
+map("n", "<C-t>", lazyterm, { desc = "ToggleTerm" })
+map("t", "<C-t>", lazyterm, { desc = "ToggleTerm" })
 
 map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>", { desc = "ToggleBlame" })

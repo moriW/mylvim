@@ -1,56 +1,4 @@
 return {
-  {
-    "nordtheme/vim",
-    config = function ()
-        vim.cmd.colorscheme("nord")
-    end
-  },
-  -- {
-  --   "rakr/vim-one",
-  --   opts = {
-  --     one_allow_italics = 1,
-  --   },
-  -- },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    opts = {
-      integrations = {
-        alpha = true,
-        cmp = true,
-        flash = true,
-        gitsigns = true,
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        lsp_trouble = true,
-        mason = true,
-        mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-        },
-        navic = { enabled = true, custom_bg = "lualine" },
-        neotest = true,
-        noice = true,
-        notify = true,
-        neotree = true,
-        semantic_tokens = true,
-        telescope = true,
-        treesitter = true,
-        which_key = true,
-      },
-    },
-    -- config = function()
-    --   require("catppuccin").setup({})
-    --   vim.cmd.colorscheme("catppuccin-macchiato")
-    -- end,
-  },
   { "wfxr/minimap.vim" },
   { "f-person/git-blame.nvim" },
   {
@@ -67,8 +15,8 @@ return {
         [[ ]],
         [[ ]],
         [[ ]],
-        [[                     _____________________________________________________________________________________                     ]],
-        [[                    /                                                                                     \                    ]],
+        [[                    _______________________________________________________________________________________                    ]],
+        [[                   |                                                                                       |                   ]],
         [[  _________________|_______________________________________________________________________________________|_________________  ]],
         [[ |                                                                                                                           | ]],
         [[ |  ,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----._,-----.  | ]],
@@ -88,9 +36,9 @@ return {
         [[ | ||               |||  ;  |||     |||     |||     |||     |||     |||     |||     |||     |||     |||           |||     || | ]],
         [[ | |;---------------:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----:|;-----------:|;-----:| | ]],
         [[ |              ,-----._,---------._,---------------------------------------------._,---------._,-----.                      | ]],
-        [[ |             j| Alt |V| Command |V|   Space                                     |V| Command |V| Alt |i   |  ||__|  | /|~~\ | ]],
-        [[ |             ||     |||         |||                                             |||         |||     ||  \|--||  |\ |( |--< | ]],
-        [[ |             |;-----:|;---------:|;-------------------------------------Mori----:|;---------:|;-----:|   |  ||  |  | \|__/ | ]],
+        [[ |             j| Alt |V| Command |V|   Space                                     |V| Command |V| Alt |i                     | ]],
+        [[ |             ||     |||         |||                                             |||         |||     ||                     | ]],
+        [[ |             |;-----:|;---------:|;----------------------------------Mori❤️Jae---:|;---------:|;-----:|                     | ]],
         [[ |___________________________________________________________________________________________________________________________| ]],
         [[ ]],
         [[ ]],
