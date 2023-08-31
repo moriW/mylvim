@@ -34,3 +34,5 @@ map("n", "<C-t>", lazyterm, { desc = "ToggleTerm" })
 map("t", "<C-t>", lazyterm, { desc = "ToggleTerm" })
 
 map("n", "<leader>gb", "<cmd>GitBlameToggle<cr>", { desc = "ToggleBlame" })
+
+vim.cmd[[colorscheme tokyonight-night]]
