@@ -3,7 +3,7 @@ return {
     "Shatur/neovim-ayu",
     lazy = false,
     config = function()
-      vim.cmd([[colorscheme ayu-dark]])
+      vim.cmd([[colorscheme ayu-light]])
     end,
   },
   { "wfxr/minimap.vim" },
