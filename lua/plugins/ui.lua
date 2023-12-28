@@ -7,6 +7,14 @@ return {
     end,
   },
   {
+    "norcalli/nvim-colorizer.lua",
+    name = "colorizer",
+    event = "VeryLazy",
+    init = function()
+      require("colorizer").setup({ "*" })
+    end,
+  },
+  {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",
     event = "VeryLazy",
